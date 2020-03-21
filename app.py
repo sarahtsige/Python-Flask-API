@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify, request
 from peewee import *
 from playhouse.shortcuts import model_to_dict, dict_to_model
 
@@ -19,11 +19,10 @@ class Country(BaseModel):
 
 
 db.connect([Country])
-#db.drop_tables([Country])
-#db.create_tables()
+db.drop_tables([Country])
+db.create_tables()
 
-#Bank(bank_name = '', city = '', state= , cert= '', acquiring_institution = '', closing_date = ()).save()
-#Bank(bank_name = '', city = '', state= , cert= '', acquiring_institution = '', closing_date = ()).save()
+Country(country = '', region= '', rank=0, happiness_score=0).save()
 
 
 app = Flask(__name__)

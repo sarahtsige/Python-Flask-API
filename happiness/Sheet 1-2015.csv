@@ -1,4 +1,4 @@
-Country,Region,Happiness Rank,Happiness Score
+name,region,rank,happiness_score
 Switzerland,Western Europe,1,7.587
 Iceland,Western Europe,2,7.561
 Denmark,Western Europe,3,7.527
