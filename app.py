@@ -17,7 +17,7 @@ class Region(BaseModel):
 
 class Country(BaseModel):
     name = CharField()
-    region = CharField()
+    # region = CharField()
     rank = IntegerField()
     happiness_score = FloatField()
     region_id = ForeignKeyField(Region, backref='regions')

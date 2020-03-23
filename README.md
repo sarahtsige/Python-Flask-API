@@ -2,14 +2,14 @@
 Create API using Python and Flask
 
 ## Technologies 
--Python
--Flask 
--PeeWee
+* Python
+* Flask 
+* PeeWee
 
 
 ## Objective
-Objective was to build an API using Flask and PeeWee.  Data set utilized was gatherered from Kaggle.    Data is from the world
-happiness report and lists the countries in order of happiness as rated by a hapiness score.  API includes the country name, 
+Objective was to build an API using Flask and PeeWee.  Data set utilized was gathered from Kaggle.    Data is from the 2015 world
+happiness report and lists countries and happiness rank as measured by the country's happiness score.  API includes the country name, 
 region, happiness ranking, and hapiness score.
 
 
@@ -30,10 +30,14 @@ Paths available to access data are:
 
 '/'  - Returns all countries
 
-'/country/<id>'  - Returns one country with matching the id provided in the URL
+'/country/`<id>`'  - Returns one country matching the id provided in the URL
 
 
-'/country/region/<region>' - Return list of countries within the provided region
+'/country/region/`<id>`' - Return list of countries within the provided region
+
+'/regions/' - Returns the list of regions
+
+'/regions/`<id>`' - Returns the region matching the region id provided
 
 ## Author
 
