@@ -5,10 +5,12 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
+autopep8 = "*"
 
 [packages]
 flask = "*"
 psycopg2 = "*"
+peewee = "*"
 
 [requires]
 python_version = "3.7"
