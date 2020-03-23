@@ -10,12 +10,17 @@ class BaseModel(Model):
     class Meta:
         database = db
 
+class Region(BaseModel):
+    name = CharField()
+
+
 
 class Country(BaseModel):
     name = CharField()
     region = CharField()
     rank = IntegerField()
     happiness_score = FloatField()
+    region_id = ForeignKeyField(Region, backref='regions')
 
 
 db.connect()
@@ -31,11 +36,22 @@ def get_countries():
         countries.append(model_to_dict(country))
     return jsonify(countries)
 
+@app.route('/regions/', methods = ['GET'])
+@app.route('/regions/<id>', methods = ['GET'])
+def get_regions(id = None):
+    if id:
+         return jsonify(model_to_dict(Region.get(Region.id == id)))
+    regions = []
+    for region in Region.select():
+        regions.append(model_to_dict(region))
+    return jsonify(regions)
+
+
 
 @app.route('/country/region/<region>', methods=['GET'])
 def get_country_by_region(region):
     countries = []
-    for country in Country.select().where(Country.region == region):
+    for country in Country.select().where(Country.region_id == region):
         countries.append(model_to_dict(country))
     return jsonify(countries)
 
